@@ -1,5 +1,8 @@
 # Leitor Fatura Youon
 
+[![CI](https://github.com/GuilhermeCostaProenca/leitor-fatura-youon/actions/workflows/ci.yml/badge.svg?branch=mainn)](https://github.com/GuilhermeCostaProenca/leitor-fatura-youon/actions/workflows/ci.yml)
+
+
 Python tool to parse and process billing documents.
 
 ## Highlights
@@ -33,3 +36,4 @@ Active and maintained.
 ## Author
 **Guilherme Costa Proenca**
 - GitHub: https://github.com/GuilhermeCostaProenca
+

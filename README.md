@@ -1,39 +1,25 @@
-# Leitor Fatura Youon
+# Leitor de Fatura — Energy-Bill Parser
 
-[![CI](https://github.com/GuilhermeCostaProenca/leitor-fatura-youon/actions/workflows/ci.yml/badge.svg?branch=mainn)](https://github.com/GuilhermeCostaProenca/leitor-fatura-youon/actions/workflows/ci.yml)
+A Python service that turns messy energy-bill PDFs into clean, validated, structured data — built for the workflow at YOU.ON.
 
+## What it does
 
-Python tool to parse and process billing documents.
+- **Reads bills with Azure AI Document Intelligence** (Form Recognizer) — `src/azure_reader.py`
+- **Parses** the extracted content into structured fields (`src/parser/`)
+- **Validates** the result before it leaves the pipeline (`src/validador.py`)
+- **Serves** it over a small FastAPI app (`src/web_server.py`) with HTML templates
+- **Integrates** downstream (e.g. Monday.com) for the operational workflow
 
-## Highlights
-- Production-focused repository with clear structure and maintainable code.
-- Versioned with Git and documented for collaboration and review.
-- Continuously improved as part of my professional portfolio.
+## Stack
 
-## Tech Stack
-"automation", "data-processing", "python"
+Python · Azure AI Document Intelligence · FastAPI · Uvicorn · Jinja2
 
-## Getting Started
-### Prerequisites
-- Git
-- Runtime/dependencies for this stack (see project files)
+## Getting started
 
-### Clone
-`ash
+```bash
 git clone https://github.com/GuilhermeCostaProenca/leitor-fatura-youon.git
 cd leitor-fatura-youon
-`",
-    ",
-    
-`ash
-# install dependencies
-# run project
-`",
-    ",
-    
-Active and maintained.
+pip install -r requirements.txt
+```
 
-## Author
-**Guilherme Costa Proenca**
-- GitHub: https://github.com/GuilhermeCostaProenca
-
+Set your Azure credentials in `.env`, then run the web server from `src/`. Sample bills live in `sample_faturas/`.
